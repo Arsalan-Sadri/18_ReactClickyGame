@@ -12,11 +12,25 @@ class App extends Component {
   };
 
   removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friendsArr.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+
+    const newFriends = this.shuffleArr(this.state.friendsArr);
+    // const newFriends = this.state.friendsArr.filter(friend => friend.id !== id);
+    
+    this.setState({
+      friendsArr: newFriends 
+    });
   };
+
+ shuffleArr(arr) {
+    var j, x, i;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
+}
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
