@@ -1,7 +1,7 @@
 import React from "react";
-import "./FriendCard.css";
+import "./Card.css";
 
-class FriendCard extends React.Component {
+class Card extends React.Component {
 
   state = {
     selected: false
@@ -40,4 +40,4 @@ class FriendCard extends React.Component {
   }
 
 }
-export default FriendCard;
+export default Card;

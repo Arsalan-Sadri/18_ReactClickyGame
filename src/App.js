@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
+import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
-import Score from "./components/Score";
 import cardsArr from "./friends.json";
 import "./App.css";
 
 class App extends Component {
 
   state = {
-    cardsArr
+    cardsArr,
+    score: 0,
+    topScore: 0
   };
 
   shuffleCards = () => {
@@ -31,25 +32,23 @@ class App extends Component {
 
   render() {
     return (
-      // <div className="container">
-      <Wrapper>
-        <Score 
-        ref={arg => {
-          this.refToScore = arg;
-          }
-        }
-        />
-        {this.state.cardsArr.map(friend => (
-          <FriendCard
-            id={friend.id}
-            key={friend.id}
-            image={friend.image}
-            shuffleCards={this.shuffleCards}
-            refToScore={this.refToScore}
-          />
-        ))}
-      </Wrapper>
-      // </div>
+      <div className="container">
+        <Wrapper>
+          <div className="title">
+              <h1>Score: {this.state.score}</h1>
+              <h1>Top score: {this.state.topScore}</h1>
+          </div>
+          {this.state.cardsArr.map(friend => (
+            <Card
+              id={friend.id}
+              key={friend.id}
+              image={friend.image}
+              shuffleCards={this.shuffleCards}
+              refToScore={this.refToScore}
+            />
+          ))}
+        </Wrapper>
+      </div>
     );
   }
 }
