@@ -2,23 +2,21 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import friendsArr from "./friends.json";
+import cardsArr from "./friends.json";
 import "./App.css";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  
   state = {
-    friendsArr
+    cardsArr
   };
 
-  removeFriend = id => {
-
-    const newFriends = this.shuffleArr(this.state.friendsArr);
-    // const newFriends = this.state.friendsArr.filter(friend => friend.id !== id);
+  shuffleCards = () => {
     
     this.setState({
-      friendsArr: newFriends 
+      cardsArr: this.shuffleArr(this.state.cardsArr) 
     });
+
   };
 
  shuffleArr(arr) {
@@ -32,22 +30,18 @@ class App extends Component {
     return arr;
 }
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       // <div className="container">
-
       <Wrapper>
         <Title>Friends List</Title>
-        {this.state.friendsArr.map(friend => (
+        {this.state.cardsArr.map(friend => (
           <FriendCard
-            removeFriend={this.removeFriend}
             id={friend.id}
             key={friend.id}
-            name={friend.name}
             image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            selectStatus={false}
+            shuffleCards={this.shuffleCards}
           />
         ))}
       </Wrapper>
