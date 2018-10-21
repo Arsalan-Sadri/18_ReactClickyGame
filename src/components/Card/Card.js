@@ -26,7 +26,7 @@ class Card extends React.Component {
     return (
       <div className="card" onClick={() => this.cardSelectHandler(this.props.id)}>
         <div className="img-container">
-          <img alt={this.props.name} src={this.props.image} />
+          <img alt={this.props.id} src={this.props.photoURL} />
         </div>
       </div>
     );

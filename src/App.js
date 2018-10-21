@@ -1,27 +1,27 @@
+import "./App.css";
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
-import "./App.css";
-import cardsArr from "./friends.json";
-import ax from "./data";
+import axi from "./data";
 
 class App extends Component {
   
   state = {
-    cardsArr,
+    photosArr: [],
     score: 0,
     topScore: 0
   };
-  
-componentDidMount() {
-  ax.then(data => {
-      console.log("data fetched!");
-      console.log(data.data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-}
+
+  componentDidMount() {
+    axi.then(data => {
+        this.setState({
+          photosArr: data.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   incrementScore = () => {
     this.setState({
@@ -40,7 +40,7 @@ componentDidMount() {
 
   shuffleCards = () => {
     this.setState({
-      cardsArr: this.shuffleArr(this.state.cardsArr)
+      photosArr: this.shuffleArr(this.state.photosArr)
     });
   };
 
@@ -65,12 +65,11 @@ componentDidMount() {
                 <h1>Score: {this.state.score}</h1>
                 <h1>Top score: {this.state.topScore}</h1>
             </div>
-            {this.state.cardsArr.map(friend => (
+            {this.state.photosArr.map(photo => (
               <Card
-                id={friend.id}
-                key={friend.id}
-                image={friend.image}
-                name={friend.name}
+                key={photo.id}
+                id={photo.id}
+                photoURL={photo.links.download}
                 incrementScore={this.incrementScore}
                 resetScore={this.resetScore}
               />
