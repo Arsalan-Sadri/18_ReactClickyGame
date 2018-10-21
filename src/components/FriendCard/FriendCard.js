@@ -15,14 +15,18 @@ class FriendCard extends React.Component {
         selected: true
       });
 
+      this.props.refToScore.setState({
+        score: this.score +1,
+        topScore: this.topScore +1
+      });
       
       this.props.shuffleCards();
     }
+
     else {
 
 
     }
-    
   };
 
   render () {

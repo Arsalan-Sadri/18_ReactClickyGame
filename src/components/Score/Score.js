@@ -7,6 +7,10 @@ class Score extends React.Component {
         topScore: 0
     }
 
+    myFunc() {
+        return "hello";
+      }
+      
     render () {
         return (
             <div className="title">

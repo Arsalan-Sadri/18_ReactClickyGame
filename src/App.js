@@ -6,19 +6,19 @@ import cardsArr from "./friends.json";
 import "./App.css";
 
 class App extends Component {
-  
+
   state = {
     cardsArr
   };
 
   shuffleCards = () => {
-    
+
     this.setState({
       cardsArr: this.shuffleArr(this.state.cardsArr) 
     });
   };
 
- shuffleArr(arr) {
+  shuffleArr(arr) {
     var j, x, i;
     for (i = arr.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -33,14 +33,19 @@ class App extends Component {
     return (
       // <div className="container">
       <Wrapper>
-        <Score>Friends List</Score>
+        <Score 
+        ref={arg => {
+          this.refToScore = arg;
+          }
+        }
+        />
         {this.state.cardsArr.map(friend => (
           <FriendCard
             id={friend.id}
             key={friend.id}
             image={friend.image}
-            selectStatus={false}
             shuffleCards={this.shuffleCards}
+            refToScore={this.refToScore}
           />
         ))}
       </Wrapper>
