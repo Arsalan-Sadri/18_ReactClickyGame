@@ -1,16 +1,27 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
-import cardsArr from "./friends.json";
 import "./App.css";
+import cardsArr from "./friends.json";
+import ax from "./data";
 
 class App extends Component {
-
+  
   state = {
     cardsArr,
     score: 0,
     topScore: 0
   };
+  
+componentDidMount() {
+  ax.then(data => {
+      console.log("data fetched!");
+      console.log(data.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
 
   incrementScore = () => {
     this.setState({
@@ -46,23 +57,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Wrapper>
-          <div className="title">
-              <h1>Score: {this.state.score}</h1>
-              <h1>Top score: {this.state.topScore}</h1>
-          </div>
-          {this.state.cardsArr.map(friend => (
-            <Card
-              id={friend.id}
-              key={friend.id}
-              image={friend.image}
-              name={friend.name}
-              incrementScore={this.incrementScore}
-              resetScore={this.resetScore}
-            />
-          ))}
-        </Wrapper>
+      <div>
+        <nav></nav>
+        <div className="container">
+          <Wrapper>
+            <div className="title">
+                <h1>Score: {this.state.score}</h1>
+                <h1>Top score: {this.state.topScore}</h1>
+            </div>
+            {this.state.cardsArr.map(friend => (
+              <Card
+                id={friend.id}
+                key={friend.id}
+                image={friend.image}
+                name={friend.name}
+                incrementScore={this.incrementScore}
+                resetScore={this.resetScore}
+              />
+            ))}
+          </Wrapper>
+        </div>
       </div>
     );
   }
