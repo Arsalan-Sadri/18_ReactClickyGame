@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
+import Score from "./components/Score";
 import cardsArr from "./friends.json";
 import "./App.css";
 
@@ -16,7 +16,6 @@ class App extends Component {
     this.setState({
       cardsArr: this.shuffleArr(this.state.cardsArr) 
     });
-
   };
 
  shuffleArr(arr) {
@@ -34,7 +33,7 @@ class App extends Component {
     return (
       // <div className="container">
       <Wrapper>
-        <Title>Friends List</Title>
+        <Score>Friends List</Score>
         {this.state.cardsArr.map(friend => (
           <FriendCard
             id={friend.id}

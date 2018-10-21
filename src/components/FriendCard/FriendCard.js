@@ -15,11 +15,12 @@ class FriendCard extends React.Component {
         selected: true
       });
 
+      
       this.props.shuffleCards();
     }
     else {
 
-      
+
     }
     
   };
