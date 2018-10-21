@@ -19,7 +19,7 @@ class FriendCard extends React.Component {
         score: this.score +1,
         topScore: this.topScore +1
       });
-      
+
       this.props.shuffleCards();
     }
 
