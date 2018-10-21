@@ -8,24 +8,17 @@ class Card extends React.Component {
   }
 
   cardSelectHandler = id => {
-
     if (!this.state.selected) {
-
       this.setState({
         selected: true
       });
-
-      this.props.refToScore.setState({
-        score: this.score +1,
-        topScore: this.topScore +1
-      });
-
-      this.props.shuffleCards();
-    }
-
+      this.props.incrementScore();
+    } 
     else {
-
-
+      this.setState({
+        selected: false
+      });
+      this.props.resetScore();
     }
   };
 

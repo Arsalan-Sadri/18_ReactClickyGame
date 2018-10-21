@@ -12,10 +12,24 @@ class App extends Component {
     topScore: 0
   };
 
-  shuffleCards = () => {
-
+  incrementScore = () => {
     this.setState({
-      cardsArr: this.shuffleArr(this.state.cardsArr) 
+      score: this.state.score + 1,
+      topScore: this.state.topScore + 1
+    });
+    this.shuffleCards();
+  }
+
+  resetScore = () => {
+    this.setState({
+      score: 0
+    });
+    this.shuffleCards();
+  }
+
+  shuffleCards = () => {
+    this.setState({
+      cardsArr: this.shuffleArr(this.state.cardsArr)
     });
   };
 
@@ -43,8 +57,9 @@ class App extends Component {
               id={friend.id}
               key={friend.id}
               image={friend.image}
-              shuffleCards={this.shuffleCards}
-              refToScore={this.refToScore}
+              name={friend.name}
+              incrementScore={this.incrementScore}
+              resetScore={this.resetScore}
             />
           ))}
         </Wrapper>
