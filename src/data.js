@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.unsplash.com/photos/";
-const ACC_KEY = "1b7c6a4fc60537946402771ed99da19afa9e662b8f4fcf5f80dfc6256e41f34d";
-const PARAM1 = "client_id=" + ACC_KEY;
-const PHOTOS_PER_PAGE = 12;
-const PARAM2 = "per_page=" + PHOTOS_PER_PAGE;
+const BASE_URL = "https://api.giphy.com/v1/gifs/search";
+const API_KEY = "2MnPgQlfrGbyTj7jZyIqCk6SdjMeFSPE";
+const PARAM1 = "api_key=" + API_KEY;
+const NUM_OF_PHOTOS = 12;
+const PARAM2 = "limit=" + NUM_OF_PHOTOS;
+const QUERY_TERM = "nature";
+const PARAM3 = "q=" + QUERY_TERM;
 
-export default axios.get(BASE_URL + "?" + PARAM1 + "&" + PARAM2);
+export default axios.get(BASE_URL + "?" + PARAM1 + "&" + PARAM2 + "&" + PARAM3);

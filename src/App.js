@@ -13,9 +13,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axi.then(data => {
+    axi.then(res => {
         this.setState({
-          photosArr: data.data
+          photosArr: res.data.data
         });
       })
       .catch(err => {
@@ -59,7 +59,6 @@ class App extends Component {
     return (
       <div>
         <nav></nav>
-        <div className="container">
           <Wrapper>
             <div className="title">
                 <h1>Score: {this.state.score}</h1>
@@ -69,13 +68,12 @@ class App extends Component {
               <Card
                 key={photo.id}
                 id={photo.id}
-                photoURL={photo.links.download}
+                photoURL={photo.images.fixed_height_still.url}
                 incrementScore={this.incrementScore}
                 resetScore={this.resetScore}
               />
             ))}
           </Wrapper>
-        </div>
       </div>
     );
   }
