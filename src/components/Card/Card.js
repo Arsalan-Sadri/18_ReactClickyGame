@@ -7,12 +7,18 @@ class Card extends React.Component {
     selected: false
   }
 
+  setThisState = () => {
+    this.setState({
+      selected: false
+    });
+  };
+
   cardSelectHandler = () => {
     if (!this.state.selected) {
       this.setState({
         selected: true
       });
-      this.props.incrementScore();
+      this.props.incrementScore(this.setThisState);
     } 
     else {
       this.setState({

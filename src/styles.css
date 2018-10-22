@@ -13,6 +13,5 @@
 }
 
 :local(.test) {
-  /* background: green */
   animation: shake 0.5s;
 }
