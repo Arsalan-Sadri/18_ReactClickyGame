@@ -12,6 +12,10 @@
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-:local(.test) {
+/* :local(.test) {
+  animation: shake 0.5s;
+} */
+
+:export {
   animation: shake 0.5s;
 }

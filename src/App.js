@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
-import shake from "./styles.css";
+import shakeIt from "./styles.css";
 
 class App extends Component {
   
@@ -45,13 +45,14 @@ class App extends Component {
 
   resetScore = () => {
 
-    // this.shakeWrapper = shake.test;
+    this.shakeWrapper = {
+      animation: shakeIt.animation
+    };
 
     this.setState({
       score: 0
     });
 
-    // RESET THE STATES OF ALL CARDS TO FALSE 
     this.childSetStateRefs.forEach((ref) => ref());
 
     this.shuffleCards();
@@ -66,15 +67,16 @@ class App extends Component {
   shuffleArr(arr) {
     var j, x, i;
     for (i = arr.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = arr[i];
-        arr[i] = arr[j];
-        arr[j] = x;
+      j = Math.floor(Math.random() * (i + 1));
+      x = arr[i];
+      arr[i] = arr[j];
+      arr[j] = x;
     }
     return arr;
-}
+  }
 
   render() {
+    console.log("rendered!");
     return (
         <div>
             <nav></nav>
@@ -82,7 +84,7 @@ class App extends Component {
                 <h1>Score: {this.state.score}</h1>
                 <h1>Top score: {this.state.topScore}</h1>
             </div>
-            <div className={this.shakeWrapper}>
+            <div style={this.shakeWrapper}>
                 <Wrapper>
                   {this.state.photosArr.map(photo => (
                     <Card

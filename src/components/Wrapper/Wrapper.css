@@ -6,7 +6,5 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
-  width: 1000px;
   margin: auto;
-  /* background: green; */
 }
