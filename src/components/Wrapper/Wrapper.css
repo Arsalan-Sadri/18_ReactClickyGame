@@ -1,5 +1,4 @@
 .wrapper {
-  /* padding-top: 50px; */
   height: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -9,4 +8,5 @@
   overflow: auto;
   width: 1000px;
   margin: auto;
+  /* background: green; */
 }

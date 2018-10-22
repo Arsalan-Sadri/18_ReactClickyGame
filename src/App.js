@@ -3,8 +3,11 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
+import shake from "./styles.css";
 
 class App extends Component {
+  
+  shakeWrapper= {};
   
   state = {
     photosArr: [],
@@ -24,6 +27,7 @@ class App extends Component {
   }
 
   incrementScore = () => {
+
     this.setState({
       score: this.state.score + 1,
       topScore: this.state.topScore + 1
@@ -32,9 +36,13 @@ class App extends Component {
   }
 
   resetScore = () => {
+
+    this.shakeWrapper = shake.test;
+
     this.setState({
       score: 0
     });
+
     this.shuffleCards();
   }
 
@@ -57,24 +65,26 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <nav></nav>
-          <Wrapper>
+        <div>
+            <nav></nav>
             <div className="title">
                 <h1>Score: {this.state.score}</h1>
                 <h1>Top score: {this.state.topScore}</h1>
             </div>
-            {this.state.photosArr.map(photo => (
-              <Card
-                key={photo.id}
-                id={photo.id}
-                photoURL={photo.images.fixed_height_still.url}
-                incrementScore={this.incrementScore}
-                resetScore={this.resetScore}
-              />
-            ))}
-          </Wrapper>
-      </div>
+            <div className={this.shakeWrapper}>
+                <Wrapper>
+                  {this.state.photosArr.map(photo => (
+                    <Card
+                      key={photo.id}
+                      id={photo.id}
+                      photoURL={photo.images.fixed_height_still.url}
+                      incrementScore={this.incrementScore}
+                      resetScore={this.resetScore}
+                    />
+                  ))}
+                </Wrapper>
+            </div>
+        </div>
     );
   }
 }
