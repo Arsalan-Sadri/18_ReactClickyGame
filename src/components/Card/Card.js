@@ -7,7 +7,7 @@ class Card extends React.Component {
     selected: false
   }
 
-  setThisState = () => {
+  setStateFromParent = () => {
     this.setState({
       selected: false
     });
@@ -18,7 +18,7 @@ class Card extends React.Component {
       this.setState({
         selected: true
       });
-      this.props.incrementScore(this.setThisState);
+      this.props.incrementScore(this.setStateFromParent);
     } 
     else {
       this.setState({
