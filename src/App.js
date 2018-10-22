@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
-import shakeIt from "./styles.css";
+import shakeCSS from "./styles.css";
 
 class App extends Component {
   
@@ -46,7 +46,7 @@ class App extends Component {
   resetScore = () => {
 
     this.shakeWrapper = {
-      animation: shakeIt.animation
+      animation: shakeCSS.animation
     };
 
     this.setState({
