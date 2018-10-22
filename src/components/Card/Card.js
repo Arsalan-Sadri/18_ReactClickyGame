@@ -7,7 +7,7 @@ class Card extends React.Component {
     selected: false
   }
 
-  cardSelectHandler = id => {
+  cardSelectHandler = () => {
     if (!this.state.selected) {
       this.setState({
         selected: true
@@ -24,7 +24,7 @@ class Card extends React.Component {
 
   render () {
     return (
-      <div className="card" onClick={() => this.cardSelectHandler(this.props.id)}>
+      <div className="card" onClick={this.cardSelectHandler}>
         <div className="img-container">
           <img alt={this.props.id} src={this.props.photoURL} />
         </div>

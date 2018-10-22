@@ -28,21 +28,30 @@ class App extends Component {
 
   incrementScore = () => {
 
-    this.setState({
+    if (this.state.topScore > this.state.score)
+      this.setState({
+        score: this.state.score + 1,
+      });
+
+    else this.setState({
       score: this.state.score + 1,
       topScore: this.state.topScore + 1
     });
+
     this.shuffleCards();
   }
 
   resetScore = () => {
 
-    this.shakeWrapper = shake.test;
+    // this.shakeWrapper = shake.test;
 
     this.setState({
       score: 0
     });
 
+    // RESET THE STATES OF ALL CARDS TO FALSE 
+
+    
     this.shuffleCards();
   }
 
