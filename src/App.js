@@ -2,18 +2,41 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
-import  shakeCSS from "./App.css";
+import "./App.css";
 
 class App extends Component {
   
-  shakeWrapper = {};
   childSetStateRefs = [];
   
   state = {
     photosArr: [],
     score: 0,
-    topScore: 0
+    topScore: 0,
+    animation: false
   };
+
+  resetScore = () => {
+
+    this.setState({
+          animation: false
+        });  
+    
+    setTimeout(() => {
+
+      this.setState({
+        animation: true
+      });  
+      
+    }, 0);
+
+    this.setState({
+      score: 0
+    });
+
+    this.childSetStateRefs.forEach((ref) => ref());
+
+    this.shuffleCards();
+  }
 
   componentDidMount() {
     axi.then(res => {
@@ -39,21 +62,6 @@ class App extends Component {
     });
 
     this.childSetStateRefs.push(childSetStateRef);
-    this.shuffleCards();
-  }
-
-  resetScore = () => {
-
-    this.shakeWrapper = {
-      animation: shakeCSS.animation
-    };
-
-    this.setState({
-      score: 0
-    });
-
-    this.childSetStateRefs.forEach((ref) => ref());
-
     this.shuffleCards();
   }
 
@@ -83,7 +91,7 @@ class App extends Component {
                 <h1>Score: {this.state.score}</h1>
                 <h1>Top score: {this.state.topScore}</h1>
             </div>
-            <div style={this.shakeWrapper}>
+            <div className={this.state.animation? "anim-1": ""}>
                 <Wrapper>
                   {this.state.photosArr.map(photo => (
                     <Card

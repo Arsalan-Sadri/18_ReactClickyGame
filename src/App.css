@@ -58,9 +58,3 @@ body {
 .anim-2 {
   animation: shake2 0.5s;
 }
-
-:export {
-  animation: shake1 0.5s;
-  }
-  
-
