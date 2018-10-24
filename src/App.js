@@ -1,8 +1,8 @@
-import  shakeCSS from "./App.css";
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
+import  shakeCSS from "./App.css";
 
 class App extends Component {
   
@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("rendered!");
+    
     return (
         <div>
             <nav></nav>
