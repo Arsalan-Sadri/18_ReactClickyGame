@@ -1,9 +1,8 @@
-import "./App.css";
+import  shakeCSS from "./App.css";
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
-import shakeCSS from "./style.css";
 
 class App extends Component {
   
