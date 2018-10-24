@@ -12,7 +12,8 @@ class App extends Component {
     photosArr: [],
     score: 0,
     topScore: 0,
-    animation: false
+    animation: false,
+    showMsg: false
   };
 
   restartAnim = () => {
@@ -29,7 +30,23 @@ class App extends Component {
     }, 0);
   }
 
+  toggleMsg = () => {
+
+    this.setState({
+      showMsg: true
+    });
+
+    setTimeout(() => {
+      this.setState({
+        showMsg: false
+      });
+    }, 2000);
+
+  }
+
   resetScore = () => {
+
+    this.toggleMsg();
 
     this.restartAnim();
 
@@ -90,13 +107,15 @@ class App extends Component {
     
     return (
         <div>
-          <div className="row">
+          <div className="row header">
               <div className="logo col-sm">
                   <h1>Memory</h1>
                   <h1>Game</h1>
               </div>
               <div className="msg col-sm">
-                  <h1>You guessed wrongly!!</h1>
+                  <h1 className={this.state.animation? "anim": ""}>
+                  {this.state.showMsg? "Wrong choice!": ""}
+                  </h1>
               </div>
               <div className="score col-sm">
                   <h1>Score: {this.state.score}</h1>
