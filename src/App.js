@@ -15,19 +15,23 @@ class App extends Component {
     animation: false
   };
 
-  resetScore = () => {
+  restartAnim = () => {
 
     this.setState({
-          animation: false
-        });  
-    
+      animation: false
+    });
+
     setTimeout(() => {
 
       this.setState({
         animation: true
-      });  
-      
+      });
     }, 0);
+  }
+
+  resetScore = () => {
+
+    this.restartAnim();
 
     this.setState({
       score: 0
@@ -86,11 +90,19 @@ class App extends Component {
     
     return (
         <div>
-            <nav></nav>
-            <div className="title">
-                <h1>Score: {this.state.score}</h1>
-                <h1>Top score: {this.state.topScore}</h1>
-            </div>
+          <div className="row">
+              <div className="logo col-sm">
+                  <h1>Memory</h1>
+                  <h1>Game</h1>
+              </div>
+              <div className="msg col-sm">
+                  <h1>You guessed wrongly!!</h1>
+              </div>
+              <div className="score col-sm">
+                  <h1>Score: {this.state.score}</h1>
+                  <h1>Top score: {this.state.topScore}</h1>
+              </div>
+          </div>
             <div className={this.state.animation? "anim": ""}>
                 <Wrapper>
                   {this.state.photosArr.map(photo => (
