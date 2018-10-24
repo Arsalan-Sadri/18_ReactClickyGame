@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
-import shakeCSS from "./styles.css";
+import shakeCSS from "./style.css";
 
 class App extends Component {
   
