@@ -91,7 +91,7 @@ class App extends Component {
                 <h1>Score: {this.state.score}</h1>
                 <h1>Top score: {this.state.topScore}</h1>
             </div>
-            <div className={this.state.animation? "anim-1": ""}>
+            <div className={this.state.animation? "anim": ""}>
                 <Wrapper>
                   {this.state.photosArr.map(photo => (
                     <Card
