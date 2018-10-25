@@ -6,7 +6,7 @@ import "./App.css";
 
 class App extends Component {
   
-  childSetStateRefs = [];
+  setChildsState = [];
   
   state = {
     photosArr: [],
@@ -54,7 +54,7 @@ class App extends Component {
       score: 0
     });
 
-    this.childSetStateRefs.forEach((ref) => ref());
+    this.setChildsState.forEach((ref) => ref());
 
     this.shuffleCards();
   }
@@ -70,7 +70,7 @@ class App extends Component {
       });
   }
 
-  incrementScore = (childSetStateRef) => {
+  incrementScore = (setChildState) => {
 
     if (this.state.topScore > this.state.score)
       this.setState({
@@ -82,7 +82,7 @@ class App extends Component {
       topScore: this.state.topScore + 1
     });
 
-    this.childSetStateRefs.push(childSetStateRef);
+    this.setChildsState.push(setChildState);
     this.shuffleCards();
   }
 
