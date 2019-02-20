@@ -18,14 +18,14 @@
 
 # :nut_and_bolt: Tools and Technologies
 * Languages, libraries, and frameworks: `HTML`, `CSS`, `JavaScript`
-* Dependencies: `axios`, `react`, `react-dom`, `react-scripts`
+* Dependencies: `axios`, `react`, `react-dom`, `react-scripts`, `gh-pages`
 * API: `GIPHY API`
 * Package Manager: `npm`
 * Version control: `Git`
 * Editor: `Visual Studio Code`
 * Operating System: `Mac OS`
 
-# :arrow_forward: Application Deployed
+# :arrow_forward: Deployed Application
 * See the [application]() up and running via GitHub Pages directly from its depository 
 
 
