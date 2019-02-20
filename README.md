@@ -13,7 +13,7 @@
 * Once the user's score is reset after an incorrect guess, the game restarts.
 * Images are pulled over from `GIPHY API`
 
-<img src="Docs/Images/main_page.png" width="600" height="500">
+<img src="Docs/Images/main_page.png" width="700" height="500">
 
 
 # :nut_and_bolt: Tools and Technologies
