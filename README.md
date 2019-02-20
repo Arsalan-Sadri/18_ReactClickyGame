@@ -28,7 +28,6 @@
 # :arrow_forward: Deployed Application
 * See the [application](https://arsalan-sadri.github.io/18_ReactClickyGame/) up and running via GitHub Pages directly from its depository 
 
-
 # :tv: Demo
 * [Here]() see a short demo of this application on my YouTube channel!
 
