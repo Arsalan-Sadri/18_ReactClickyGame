@@ -5,7 +5,7 @@
   * Find all deployed applications 
 
 # :page_with_curl: Description
-* A momory game.
+* A memory game.
 * The application keeps track of the user's score. 
 * Every time an image is clicked, the images rendered to the page shuffle themselves in a random order. 
 * The user's score gets incremented when clicking an image for the first time.
