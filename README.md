@@ -11,6 +11,7 @@
 * The user's score gets incremented when clicking an image for the first time.
 * The user's score get reset to 0 if they click the same image more than once.
 * Once the user's score is reset after an incorrect guess, the game restarts.
+* Images are pulled over from `GIPHY API`
 
 <img src="Docs/Images/main_page.png" width="600" height="500">
 
@@ -18,6 +19,7 @@
 # :nut_and_bolt: Tools and Technologies
 * Languages, libraries, and frameworks: `HTML`, `CSS`, `JavaScript`
 * Dependencies: `axios`, `react`, `react-dom`, `react-scripts`
+* API: `GIPHY API`
 * Package Manager: `npm`
 * Version control: `Git`
 * Editor: `Visual Studio Code`
