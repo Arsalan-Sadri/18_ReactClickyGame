@@ -1,6 +1,6 @@
 {
     "homepage": "https://arsalan-sadri.github.io/18_ReactClickyGame/",
-    "name": "18_ReactClickyGame",
+    "name": "reactclickygame",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
