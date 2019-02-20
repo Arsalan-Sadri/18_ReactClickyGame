@@ -26,7 +26,7 @@
 * Operating System: `Mac OS`
 
 # :arrow_forward: Deployed Application
-* See the [application]() up and running via GitHub Pages directly from its depository 
+* See the [application](https://arsalan-sadri.github.io/18_ReactClickyGame/) up and running via GitHub Pages directly from its depository 
 
 
 # :tv: Demo
