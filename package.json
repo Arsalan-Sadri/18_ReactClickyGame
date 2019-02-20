@@ -1,6 +1,6 @@
 {
     "homepage": "https://arsalan-sadri.github.io/18_ReactClickyGame/",
-    "name": "bootcamp-assign-react-clicky-game",
+    "name": "18_ReactClickyGame",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
