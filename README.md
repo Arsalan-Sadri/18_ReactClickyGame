@@ -5,13 +5,12 @@
   * Find all deployed applications 
 
 # :page_with_curl: Description
-* A memory game.
-* The application keeps track of the user's score. 
+* A web app memory game that keeps track of the user's selected images and updates their scores accordingly. 
 * Every time an image is clicked, the images rendered to the page shuffle themselves in a random order. 
-* The user's score gets incremented when clicking an image for the first time.
-* The user's score get reset to 0 if they click the same image more than once.
-* Once the user's score is reset after an incorrect guess, the game restarts.
-* Images are pulled over from `GIPHY API`
+* The user's score gets incremented when clicking on an image for the first time.
+* The user's score gets reset to 0 if they click on the same image for the second time.
+* Once the user's score has reset after an incorrect guess, the game restarts.
+* Images are NOT pulled over from a file or database, but they are dynamic data fetched from `GIPHY API`
 
 <img src="Docs/Images/main_page.png" width="700" height="500">
 
