@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import axi from "./data";
 import "./App.css";
+import MyModal from "./components/MyModal"
 
 class App extends Component {
     setChildsStates = [];
@@ -126,6 +127,7 @@ class App extends Component {
                         ))}
                     </Wrapper>
                 </div>
+                <MyModal />
             </div>
         );
     }
