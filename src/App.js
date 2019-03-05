@@ -109,7 +109,7 @@ class App extends Component {
             <div className="col-md text-center text-sm-left">
               <h1>Memory Game</h1>
             </div>
-            <div className="col-md warning-col">
+            <div className="col-md text-center warning-col">
               <h1 className={this.state.animation ? "animation" : ""}>
                 {this.state.showMsg ? "Wrong choice!" : ""}
               </h1>
