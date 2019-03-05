@@ -2,14 +2,13 @@
   height: 200px;
   width: 200px;
   margin: 10px;
-  position: relative;
   text-align: left;
-  /* same as body */
   background: #000;
 }
 
-.img-container {
+.card-img-top {
   height: 100%;
+  width: 100%;
 }
 
 img {
