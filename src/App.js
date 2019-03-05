@@ -101,25 +101,29 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div className="row header">
-          <div className="logo col-sm">
-            <h1>Memory</h1>
-            <h1>Game</h1>
-          </div>
-          <div className="msg col-sm">
-            <h1 className={this.state.animation ? "anim" : ""}>
-              {this.state.showMsg ? "Wrong choice!" : ""}
-            </h1>
-          </div>
-          <div className="score col-sm">
-            <h1>Score: {this.state.score}</h1>
-            <h1>Top score: {this.state.topScore}</h1>
+      <React.Fragment>
+
+
+        <div className="jumbotron">
+          <div className="row">
+            <div className="col-md text-left">
+              <h1>Memory Game</h1>
+            </div>
+            <div className="col-md msg">
+              <h1 className={this.state.animation ? "animation" : ""}>
+                {this.state.showMsg ? "Wrong choice!" : ""}
+              </h1>
+            </div>
+            <div className="col-md text-right">
+              <h1>Score: {this.state.score}</h1>
+              <h1>Top score: {this.state.topScore}</h1>
+            </div>
           </div>
         </div>
 
+        {/* MAIN CONTENT WRAPPER */}
         <div className="container mb-5">
-          <div className={this.state.animation ? "anim" : ""}>
+          <div className={this.state.animation ? "animation" : ""}>
             <Wrapper>
               {this.state.photosArr.map(photo => (
                 <Card
@@ -137,7 +141,7 @@ class App extends Component {
         <Footer />
 
         <MyModal />
-      </div>
+      </React.Fragment>
     );
   }
 }
