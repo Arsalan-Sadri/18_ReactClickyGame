@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import axi from "./data";
 import "./App.css";
 import MyModal from "./components/MyModal";
+import Footer from "./components/Footer";
 
 class App extends Component {
   setChildsStates = [];
@@ -117,7 +118,7 @@ class App extends Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container mb-5">
           <div className={this.state.animation ? "anim" : ""}>
             <Wrapper>
               {this.state.photosArr.map(photo => (
@@ -132,6 +133,9 @@ class App extends Component {
             </Wrapper>
           </div>
         </div>
+
+        <Footer />
+
         <MyModal />
       </div>
     );

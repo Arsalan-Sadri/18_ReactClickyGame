@@ -1,0 +1,15 @@
+/********** 
+    FOOTER
+**********/
+.footer {
+  background: #4d636f;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  height: 50px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
