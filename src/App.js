@@ -102,8 +102,6 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-
-
         <div className="jumbotron pb-0">
           <div className="row">
             <div className="col-md text-center text-sm-left">
