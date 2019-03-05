@@ -104,7 +104,7 @@ class App extends Component {
       <React.Fragment>
 
 
-        <div className="jumbotron">
+        <div className="jumbotron pb-0">
           <div className="row">
             <div className="col-md text-left">
               <h1>Memory Game</h1>
