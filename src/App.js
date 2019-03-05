@@ -106,7 +106,7 @@ class App extends Component {
 
         <div className="jumbotron pb-0">
           <div className="row">
-            <div className="col-md text-left">
+            <div className="col-md text-center text-sm-left">
               <h1>Memory Game</h1>
             </div>
             <div className="col-md warning-col">
